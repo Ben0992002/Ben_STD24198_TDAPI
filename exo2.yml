@@ -1,0 +1,41 @@
+openapi: 3.0.3
+info:
+  title: Exercice 2 - API Welcome et Students
+  description: API pour accueillir un utilisateur et renvoyer une liste d'étudiants.
+  version: 1.0.0
+
+paths:
+  /welcome:
+    get:
+      summary: Salue un utilisateur par son nom.
+      description: |
+        Cette route prend un nom en paramètre de requête et retourne un message de bienvenue.
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+          example: Bob
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Welcome Bob!"
+  /students:
+    get:
+      summary: Récupère la liste des étudiants.
+      description: |
+        Cette route retourne un tableau JSON vide, car aucun étudiant n'a encore été ajouté.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+              example: []

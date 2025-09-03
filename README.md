@@ -1,6 +1,6 @@
 # Preparation-Examen Pratique - API & Spécification OpenAPI
 
-Ce dépôt contient la solution complète pour l'exercice 1 du TD d'API. Il inclut les spécifications OpenAPI (OAS3) pour chaque exercice ainsi que le code Python de l'API correspondante.
+Ce dépôt contient la solution complète pour les TD d'API. Il inclut les spécifications OpenAPI (OAS3) pour chaque exercice ainsi que le code Python de l'API correspondante.
 
 ## Structure du projet
 

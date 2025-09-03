@@ -1,0 +1,49 @@
+openapi: 3.0.3
+info:
+  title: Exercice 3 - Modèle et Création d'Étudiants
+  description: API pour gérer les informations des étudiants.
+  version: 1.0.0
+
+paths:
+  /students:
+    post:
+      summary: Crée de nouveaux étudiants.
+      description: |
+        Cette route accepte une liste d'objets Student et les crée.
+      requestBody:
+        description: Liste d'étudiants à créer.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Student'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Student'
+
+components:
+  schemas:
+    Student:
+      type: object
+      properties:
+        reference:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        age:
+          type: integer
+      example:
+        reference: "STD12345"
+        first_name: "John"
+        last_name: "Doe"
+        age: 22

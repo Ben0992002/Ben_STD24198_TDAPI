@@ -1,0 +1,28 @@
+openapi: 3.0.3 # Nous indique la version de la spécification OpenAPI.
+info:
+  title: Exercice 1 - API de Ping
+  description: Une API simple pour vérifier que le service est opérationnel.
+  version: 1.0.0
+
+# Définissons la seule route de notre API.
+paths:
+  /ping:
+    # C'est une opération HTTP de type GET.
+    get:
+      summary: Vérifie si l'API est en ligne.
+      description: |
+        Cette route retourne un simple "pong" pour indiquer que l'API est accessible.
+      # Utilisons un tag pour organiser l'API dans la documentation.
+      tags:
+        - Ping
+      # Spécifions les réponses possibles pour cette requête.
+      responses:
+        # Le code 200 est retourné en cas de succès.
+        '200':
+          description: OK
+          # Définissons le type de média de la réponse.
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: pong
